@@ -3,7 +3,8 @@
 > Cookie naam: s2m_cc
 
 > API voor het ophalen van de laatste cookie versie
-> https://www.seats2meet.com/api/cookies/latest
+> https://www.seats2meet.com/api/cookies/latest \
+> API header = headers: { 'token': 62296866 },
 
 ## Script check na het ophalen van data
 
