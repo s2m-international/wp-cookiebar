@@ -4,7 +4,7 @@
 
 > API voor het ophalen van de laatste cookie versie
 > https://www.seats2meet.com/api/cookies/latest \
-> API header = headers: { 'token': 62296866 },
+> API header = headers: { 'token': xxxxxx },
 
 ## Script check na het ophalen van data
 
