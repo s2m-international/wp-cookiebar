@@ -1,6 +1,6 @@
 <?php
  /* Plugin Name: WP cookiebar for S2M sites
- * Version:     1.0.1
+ * Version:     1.0.2
  * Plugin URI:
  * Description: WP Cookiebar plugin for S2M sites only
  * Author:      Sjoerd Blom and Dennis Vergeer
