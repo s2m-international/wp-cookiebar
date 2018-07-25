@@ -1,6 +1,6 @@
 <?php
  /* Plugin Name: WP cookiebar for S2M sites
- * Version:     1.0.0
+ * Version:     1.0.1
  * Plugin URI:
  * Description: WP Cookiebar plugin for S2M sites only
  * Author:      Sjoerd Blom and Dennis Vergeer
@@ -23,6 +23,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+// Plugin Prefix: wpcbs2m_
+
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
   die;
@@ -37,30 +40,30 @@ if ( ! defined( 'WPCBS2M_FILE' ) ) {
 	define( 'WPCBS2M_FILE', __FILE__ );
 }
 if ( ! defined( 'WPCBS2M_PATH' ) ) {
-	define( 'WPCBS2M_PATH', plugin_dir_path( WPCBS2M_FILE ) );
+	define( 'WPCBS2M_PATH', plugin_dir_url( __FILE__ ) );
 }
 
+define ( 'PLUGIN_SHORT', 'WP cookiebar' );
+define ( 'PLUGIN_LONG', 'WP cookiebar for S2M sites' );
 
 
 
 function wpcbs2m_activate() {
   //require_once WPCBS2M_PATH . 'plugin-update-checker/plugin-update-checker.php';
+
   require_once 'plugin-update-checker/plugin-update-checker.php';
-  $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+  $wpcbs2m_checkupdate = Puc_v4_Factory::buildUpdateChecker(
   	'https://github.com/s2m-international/wp-cookiebar/',
   	__FILE__,
   	'unique-plugin-or-theme-slug'
   );
 
-  // TODO: Set token in database instead of in file
-  $myUpdateChecker->setAuthentication('your-token-here');
-
-  //Optional: Set the branch that contains the stable release.
-  $myUpdateChecker->setBranch('stable-branch-name');
+  $wpcbs2m_checkupdate->setBranch('master');
 }
 
-
-
+require_once('assets/cookiebar-container.php');
+require_once('include/set-cookie.php');
+require_once('include/admin-setting.php');
 
 // Showtime!!! Let's start
 wpcbs2m_activate();

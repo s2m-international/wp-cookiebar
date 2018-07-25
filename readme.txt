@@ -2,7 +2,7 @@
 Contributors: @vertizio
 Tags: cookie, gdpr, s2m
 Requires at least: 4.6.7
-Tested up to: 4.6.1
+Tested up to: 5.0
 Requires PHP: 7.0
 License: GPL v3
 
