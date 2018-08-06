@@ -7,10 +7,11 @@ if ( ! defined( 'WPINC' ) ) {
 function wpcbs2m_show_cookiebar_container() {
   ?>
   <script>
-      window.onload = function () {
+      jQuery(function () {
           // get s2m_cc cookie
           // Call api to get latest cookie version and check if the s2m_cc cookie is still valid
-      }
+          renderBar();
+      });
 
       function checkCookie() {
           var cookiebarElm = document.getElementById('s2mCookieBar')
