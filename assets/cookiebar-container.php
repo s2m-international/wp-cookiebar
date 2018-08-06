@@ -57,6 +57,7 @@ function wpcbs2m_show_cookiebar_container() {
         var button_cookieSettings = document.createElement('a');
         button_cookieSettings.setAttribute('href', 'https://cookies.seats2meet.com/');
         button_cookieSettings.setAttribute('class', 'cookieButton is-success');
+        button_cookieSettings.innerText = 'Cookie settins';
 
         div_container.appendChild(div_desktopCookieText);
         div_container.appendChild(div_mobileCookietText);
