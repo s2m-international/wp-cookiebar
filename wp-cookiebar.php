@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 //  Currently plugin version.
 // Start at version 1.0.0 and use SemVer - https://semver.org
-define ( 'WPCBS2M_VERSION', '1.0.0' );
+define ( 'WPCBS2M_VERSION', '1.0.2' );
 
 // Define some constants
 if ( ! defined( 'WPCBS2M_FILE' ) ) {
@@ -63,8 +63,8 @@ function wpcbs2m_activate() {
 
 require_once('assets/cookiebar-container.php');
 require_once('include/set-cookie.php');
-require_once('include/admin-setting.php');
-
+// require_once('include/admin-setting.php');
+require_once('t.php');
 // Showtime!!! Let's start
 wpcbs2m_activate();
  ?>
