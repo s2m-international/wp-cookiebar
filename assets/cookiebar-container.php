@@ -10,7 +10,7 @@ function wpcbs2m_show_cookiebar_container() {
       jQuery(function () {
           // get s2m_cc cookie
           // Call api to get latest cookie version and check if the s2m_cc cookie is still valid
-          renderBar();
+          checkCookie();
       });
 
       function checkCookie() {
@@ -109,10 +109,12 @@ function wpcbs2m_show_cookiebar_container() {
       }
   </script>
   <style type="text/css">
-  .s2mCookieBar {
-    padding: 30px 15px;
-      border-bottom: 1px solid #d3d3d3;
-  }
+        #s2mCookieBar {
+            background-color: white;
+            padding: 30px 15px;
+            border-bottom: 1px solid #d3d3d3;
+            overflow: hidden;
+        }
 
     .cookieButton {
         cursor: pointer;
@@ -138,6 +140,12 @@ function wpcbs2m_show_cookiebar_container() {
         background-color: #95c11e;
         width: 150px;
     }
+	@media screen and (max-width: 768px) {
+		.cookieButton {
+			height: auto;
+			padding: 4px;
+		}
+	}
 
     .cookieButton:hover {
         color: #95c11e;
