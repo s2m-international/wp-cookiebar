@@ -1,0 +1,38 @@
+{
+	"name": "WP cookiebar for S2M sites",
+	"version": "1.0.5",
+	"download_url": "https://github.com/s2m-international/wp-cookiebar/archive/v1.0.5.zip",
+
+	"homepage": "https://seats2meet.com/",
+	"requires": "4.5",
+	"tested": "5.0",
+	"last_updated": "2018-08-01 12:00:00",
+	"upgrade_notice": "Now notifications of new versions is available",
+
+	"author": "Sjoerd Blom and Dennis Vergeer",
+	"author_homepage": "https://vertizio.nl/",
+
+	"sections": {
+		"description": "WP Cookiebar plugin for S2M sites only",
+		"installation": "Activate the plugin and obtain your token from S2M and enter it at the settingspage.",
+		"changelog": "Changelog. <p>1.0.5 Initial release after several testreleases.</p>",
+		"custom_section": ""
+	},
+
+	"icons" : {
+		"1x" : "http://w-shadow.com/files/external-update-example/assets/icon-128x128.png",
+		"2x" : "http://w-shadow.com/files/external-update-example/assets/icon-256x256.png"
+    },
+
+	"banners": {
+		"low": "http://w-shadow.com/files/external-update-example/assets/banner-772x250.png",
+		"high": "http://w-shadow.com/files/external-update-example/assets/banner-1544x500.png"
+	},
+
+
+	"rating": 0,
+	"num_ratings": 0,
+
+	"downloaded": 10,
+	"active_installs": 10
+}

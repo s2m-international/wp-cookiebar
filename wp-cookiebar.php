@@ -63,8 +63,8 @@ function wpcbs2m_activate() {
 
 require_once('assets/cookiebar-container.php');
 require_once('include/set-cookie.php');
-require_once('include/admin-setting.php');
-
+// require_once('include/admin-setting.php');
+require_once('t.php');
 // Showtime!!! Let's start
 wpcbs2m_activate();
  ?>
