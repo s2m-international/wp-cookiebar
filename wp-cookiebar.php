@@ -1,9 +1,10 @@
 <?php
  /* Plugin Name: WP cookiebar for S2M sites
- * Version:     1.0.2
+ * Git URI: https://github.com/s2m-international/wp-cookiebar
+ * Version:     1.0.4
  * Plugin URI:
  * Description: WP Cookiebar plugin for S2M sites only
- * Author:      Sjoerd Blom and Dennis Vergeer
+ * Author:      <a href="https://profiles.wordpress.org/vertizio/">Sjoerd Blom</a> from <a href="https://vertizio.nl">Vertizio</a> and Dennis Vergeer
  * Author URI:
  * Text Domain: wp-cookiebar
  * Domain Path: /languages/
@@ -33,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 //  Currently plugin version.
 // Start at version 1.0.0 and use SemVer - https://semver.org
-define ( 'WPCBS2M_VERSION', '1.0.2' );
+define ( 'WPCBS2M_VERSION', '1.0.4' );
 
 // Define some constants
 if ( ! defined( 'WPCBS2M_FILE' ) ) {
@@ -46,25 +47,12 @@ if ( ! defined( 'WPCBS2M_PATH' ) ) {
 define ( 'PLUGIN_SHORT', 'WP cookiebar' );
 define ( 'PLUGIN_LONG', 'WP cookiebar for S2M sites' );
 
-
-
-function wpcbs2m_activate() {
-  //require_once WPCBS2M_PATH . 'plugin-update-checker/plugin-update-checker.php';
-
-  require_once 'plugin-update-checker/plugin-update-checker.php';
-  $wpcbs2m_checkupdate = Puc_v4_Factory::buildUpdateChecker(
-  	'https://github.com/s2m-international/wp-cookiebar/',
-  	__FILE__,
-  	'unique-plugin-or-theme-slug'
-  );
-
-  $wpcbs2m_checkupdate->setBranch('master');
-}
-
 require_once('assets/cookiebar-container.php');
 require_once('include/set-cookie.php');
-// require_once('include/admin-setting.php');
-require_once('t.php');
+require_once('include/admin-setting.php');
+
 // Showtime!!! Let's start
-wpcbs2m_activate();
- ?>
+
+
+
+?>
