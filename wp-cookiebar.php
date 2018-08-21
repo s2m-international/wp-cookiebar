@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 //  Currently plugin version.
 // Start at version 1.0.0 and use SemVer - https://semver.org
-define ( 'WPCBS2M_VERSION', '1.0.0' );
+define ( 'WPCBS2M_VERSION', '1.0.2' );
 
 // Define some constants
 if ( ! defined( 'WPCBS2M_FILE' ) ) {
