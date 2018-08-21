@@ -18,5 +18,6 @@ Just upload and activate.
 NONE
 
 == Changelog ==
+1.0.6 - ready for production - cleaned up code (2018/08)
 1.0.4 - test release (2018/08)
 1.0.0 - initial release (2018/07)
