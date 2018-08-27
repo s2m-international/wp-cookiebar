@@ -10,16 +10,18 @@ function wpcbs2m_show_cookiebar_container() {
       jQuery(function () {
           // get s2m_cc cookie
           // Call api to get latest cookie version and check if the s2m_cc cookie is still valid
-          checkCookie();
+          getLatestCookieVersion('en').done(function(result) {
+            checkCookie(result);
+          });
       });
 
-      function checkCookie() {
+      function checkCookie(result) {
           var cookiebarElm = document.getElementById('s2mCookieBar')
           var s2m_cc = GetCookie('s2m_cc')
           if (s2m_cc !== 'undefined' && s2m_cc !== '') {
               var ccObj = JSON.parse(s2m_cc)
 
-              if (ccObj.Version !== api - result.Version()) {
+              if (ccObj.Version !== result.Version()) {
                   // Show cookie bar
                   renderBar();
               }
@@ -28,6 +30,23 @@ function wpcbs2m_show_cookiebar_container() {
               renderBar();
           }
       }
+
+      function getLatestCookieVersion(language) {
+            var url = '/api/cookies/latest'
+
+            if (language !== '') {
+                url = url + '?cs=' + language
+            }
+
+            $.support.cors = true;
+            return $.ajax({
+                type: 'GET',
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                headers: { 'token': apiKey },
+                dataType: 'json',
+            });
+        }
 
       function getDesktopText(){
         return "<strong>SEATS2MEET.COM USES COOKIES</strong>"
