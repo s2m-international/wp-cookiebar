@@ -17,11 +17,11 @@ function wpcbs2m_show_cookiebar_container() {
 
       function checkCookie(result) {
           var cookiebarElm = document.getElementById('s2mCookieBar')
-          var s2m_cc = GetCookie('s2m_cc')
+          var s2m_cc = getCookie('s2m_cc')
           if (s2m_cc !== 'undefined' && s2m_cc !== '') {
               var ccObj = JSON.parse(s2m_cc)
 
-              if (ccObj.Version !== result.Version()) {
+              if (ccObj.Version !== result.Version) {
                   // Show cookie bar
                   renderBar();
               }
@@ -38,8 +38,7 @@ function wpcbs2m_show_cookiebar_container() {
                 url = url + '?cs=' + language
             }
 
-            $.support.cors = true;
-            return $.ajax({
+            return jQuery.ajax({
                 type: 'GET',
                 url: url,
                 contentType: "application/json; charset=utf-8",
