@@ -32,7 +32,7 @@ function wpcbs2m_show_cookiebar_container() {
       }
 
       function getLatestCookieVersion(language) {
-            var url = '/api/cookies/latest'
+            var url = 'https://www.seats2meet.com/api/cookies/latest'
 
             if (language !== '') {
                 url = url + '?cs=' + language
@@ -43,7 +43,7 @@ function wpcbs2m_show_cookiebar_container() {
                 type: 'GET',
                 url: url,
                 contentType: "application/json; charset=utf-8",
-                headers: { 'token': apiKey },
+                headers: { 'token': <?php echo $wpcbs2m_apikey; ?> },
                 dataType: 'json',
             });
         }
