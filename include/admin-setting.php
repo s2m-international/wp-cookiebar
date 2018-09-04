@@ -5,14 +5,20 @@ if ( ! defined( 'WPINC' ) ) {
   die;
 }
 
-if (isset($_POST['wpcbs2m_submit'])) {
-  if($_POST['wpcbs2m_submit'] == 'Y') {
-          //Form data sent
-          if (current_user_can( 'manage_options' ) ) {
-            update_option('wpcbs2m_apikey', $_POST['wpcbs2m_apikey']);
-          }
-      }
+
+add_action('init','do_stuff');
+function do_stuff(){
+  if (isset($_POST['wpcbs2m_submit'])) {
+    if($_POST['wpcbs2m_submit'] == 'Y') {
+            //Form data sent
+            if (current_user_can( 'manage_options' ) ) {
+              update_option('wpcbs2m_apikey', $_POST['wpcbs2m_apikey']);
+            }
+        }
+  }
+
 }
+
 
 function wpcbs2m_add_settings_menu() {
   // Add a new submenu under Settings:
