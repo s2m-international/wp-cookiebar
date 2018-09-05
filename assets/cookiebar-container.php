@@ -1,4 +1,6 @@
 <?php
+global $wpcbs2m_apikey;
+
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
   die;
@@ -42,7 +44,7 @@ function wpcbs2m_show_cookiebar_container() {
                 type: 'GET',
                 url: url,
                 contentType: "application/json; charset=utf-8",
-                headers: { 'token': <?php echo $wpcbs2m_apikey; ?> },
+                headers: { 'token': '<?php echo $wpcbs2m_apikey; ?>' },
                 dataType: 'json',
             });
         }
@@ -137,7 +139,6 @@ function wpcbs2m_show_cookiebar_container() {
           if(elm !== null) {
               elm.style.display = 'none';
           }
-
       }
   </script>
   <style type="text/css">
