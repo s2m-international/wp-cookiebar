@@ -1,6 +1,4 @@
 <?php
-global $wpcbs2m_apikey;
-
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
   die;
