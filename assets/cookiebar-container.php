@@ -75,7 +75,13 @@ function wpcbs2m_show_cookiebar_container() {
         var button_cookieSettings = document.createElement('a');
         button_cookieSettings.setAttribute('href', 'https://cookies.seats2meet.com/');
         button_cookieSettings.setAttribute('class', 'cookieButton is-success');
-        button_cookieSettings.innerText = 'Cookie settins';
+        button_cookieSettings.innerText = 'Cookie settings';
+
+        var button_cookieSettings = document.createElement('a');
+        button_cookieSettings.setAttribute('href', 'javascript:');
+        button_cookieSettings.setAttribute('onclick', 'hideS2MCookieBar()');
+        button_cookieSettings.setAttribute('class', 'closeButton');
+        button_cookieSettings.innerText = 'X';
 
         div_container.appendChild(div_desktopCookieText);
         div_container.appendChild(div_mobileCookietText);
@@ -125,14 +131,55 @@ function wpcbs2m_show_cookiebar_container() {
           }
           return true
       }
+
+      function hideS2MCookieBar() {
+          ver elm = document.getElementById('s2mCookieBar');
+          if(elm !== null) {
+              elm.style.display = 'none';
+          }
+
+      }
   </script>
   <style type="text/css">
-        #s2mCookieBar {
-            background-color: white;
-            padding: 30px 15px;
-            border-bottom: 1px solid #d3d3d3;
-            overflow: hidden;
-        }
+    #s2mCookieBar {
+        background-color: white;
+        border-bottom: 1px solid #d3d3d3;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        padding: 30px 15px;
+        position: fixed;
+        z-index: 1000;
+        font-size: 12px;
+    }
+    
+    .closeButton {
+        cursor: pointer;
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 0;
+        height: 40px;
+        font-size: 14px;
+        font-weight: 600;
+        white-space: normal;
+        text-align: center;
+        text-decoration: none;
+        line-height: normal;
+        text-transform: uppercase;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        color: #cccccc;
+        border: none;
+        background-color: white;
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        width: 40px;
+    }
 
     .cookieButton {
         cursor: pointer;
