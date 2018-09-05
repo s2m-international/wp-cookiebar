@@ -50,6 +50,11 @@ require_once('assets/cookiebar-container.php');
 require_once('include/set-cookie.php');
 require_once('include/admin-setting.php');
 
+global $wpcbs2m_apikey;
+if (!isset $wpcbs2m_apikey) {
+  $wpcbs2m_apikey = get_option('wpcbs2m_apikey')
+}
+
 // Showtime!!! Let's start
 
 
