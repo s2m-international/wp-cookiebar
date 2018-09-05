@@ -1,6 +1,6 @@
 <?php
  /* Plugin Name: WP cookiebar for S2M sites
- * Version:     1.1.1
+ * Version:     1.1.2
  * Plugin URI:
  * Description: WP Cookiebar plugin for S2M sites only. For automatic updates, the use of <a href="https://github.com/afragen/github-updater/releases">Github Updater</a> is strongly recommended. Follow link for download: ZIP only!
  * Author:      <a href="https://profiles.wordpress.org/vertizio/">Sjoerd Blom</a> from <a href="https://vertizio.nl">Vertizio</a> and Dennis Vergeer
