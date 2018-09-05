@@ -65,17 +65,21 @@ function wpcbs2m_show_cookiebar_container() {
         div_container.setAttribute('class', 'container');
 
         var div_desktopCookieText = document.createElement('div');
-        div_desktopCookieText.setAttribute('class', 'desktopText hide-mobile')
+        div_desktopCookieText.setAttribute('class', 'text desktopText hide-mobile')
         div_desktopCookieText.innerHTML = getDesktopText();
 
         var div_mobileCookietText = document.createElement('div');
-        div_mobileCookietText.setAttribute('class', 'mobileText show-mobile')
+        div_mobileCookietText.setAttribute('class', 'text mobileText show-mobile')
         div_mobileCookietText.innerHTML = getMobileText();
+
+        var div_button = document.createElement('div');
+        div_button.setAttribute('class', 'buttonContainer');
 
         var button_cookieSettings = document.createElement('a');
         button_cookieSettings.setAttribute('href', 'https://cookies.seats2meet.com/');
         button_cookieSettings.setAttribute('class', 'cookieButton is-success');
         button_cookieSettings.innerText = 'Cookie settings';
+        div_button.appendChild(button_cookieSettings);
 
         var button_hideCookieSettings = document.createElement('a');
         button_hideCookieSettings.setAttribute('href', 'javascript:');
@@ -85,7 +89,7 @@ function wpcbs2m_show_cookiebar_container() {
 
         div_container.appendChild(div_desktopCookieText);
         div_container.appendChild(div_mobileCookietText);
-        div_container.appendChild(button_cookieSettings);
+        div_container.appendChild(div_button);
         div_container.appendChild(button_hideCookieSettings);
 
         div_s2mCookieBar.appendChild(div_container);
@@ -155,6 +159,18 @@ function wpcbs2m_show_cookiebar_container() {
 		border-top: 1px solid #CCCCCC;
     }
     
+    .container {
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+        flex-direction: row;
+        align-content: flex-start;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		-webkit-box-align: center;
+		align-items: center;
+	}
+    
     .closeButton {
         cursor: pointer;
         display: inline-block;
@@ -177,15 +193,21 @@ function wpcbs2m_show_cookiebar_container() {
 		text-align: center;
     }
 
+    .text {
+        padding-right: 15px;
+    }
+
+    .buttonContainer {
+        width: 150px;
+    }
     .cookieButton {
         cursor: pointer;
         display: inline-block;
         box-sizing: border-box;
         padding: 8px 6px;
-        height: 40px;
+        height: 38px;
         font-size: 14px;
         font-weight: 600;
-		margin-top: 10px;
         white-space: normal;
         text-align: center;
         text-decoration: none;
@@ -214,16 +236,6 @@ function wpcbs2m_show_cookiebar_container() {
         color: #95c11e;
         border-color: #95c11e;
         background-color: #fff;
-    }
-
-    .desktopText {
-        float: left;
-        padding-right: 30px;
-        width: 80%;
-    }
-
-    .mobileText {
-        margin-bottom: 15px;
     }
 
       @media screen and (min-width: 769px) {
