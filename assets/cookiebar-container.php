@@ -42,7 +42,7 @@ function wpcbs2m_show_cookiebar_container() {
                 type: 'GET',
                 url: url,
                 contentType: "application/json; charset=utf-8",
-                headers: { 'token': '<?php echo $wpcbs2m_apikey; ?>' },
+                headers: { 'token': '<?php echo get_option('wpcbs2m_apikey'); ?>' },
                 dataType: 'json',
             });
         }
@@ -77,15 +77,16 @@ function wpcbs2m_show_cookiebar_container() {
         button_cookieSettings.setAttribute('class', 'cookieButton is-success');
         button_cookieSettings.innerText = 'Cookie settings';
 
-        var button_cookieSettings = document.createElement('a');
-        button_cookieSettings.setAttribute('href', 'javascript:');
-        button_cookieSettings.setAttribute('onclick', 'hideS2MCookieBar()');
-        button_cookieSettings.setAttribute('class', 'closeButton');
-        button_cookieSettings.innerText = 'X';
+        var button_hideCookieSettings = document.createElement('a');
+        button_hideCookieSettings.setAttribute('href', 'javascript:');
+        button_hideCookieSettings.setAttribute('onclick', 'hideS2MCookieBar()');
+        button_hideCookieSettings.setAttribute('class', 'closeButton');
+        button_hideCookieSettings.innerHTML = '<svg aria-hidden="true" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>';
 
         div_container.appendChild(div_desktopCookieText);
         div_container.appendChild(div_mobileCookietText);
         div_container.appendChild(button_cookieSettings);
+        div_container.appendChild(button_hideCookieSettings);
 
         div_s2mCookieBar.appendChild(div_container);
 
@@ -133,7 +134,7 @@ function wpcbs2m_show_cookiebar_container() {
       }
 
       function hideS2MCookieBar() {
-          ver elm = document.getElementById('s2mCookieBar');
+          var elm = document.getElementById('s2mCookieBar');
           if(elm !== null) {
               elm.style.display = 'none';
           }
@@ -144,12 +145,14 @@ function wpcbs2m_show_cookiebar_container() {
         background-color: white;
         border-bottom: 1px solid #d3d3d3;
         bottom: 0;
+        font-size: 12px;
         left: 0;
         overflow: hidden;
         padding: 30px 15px;
         position: fixed;
+        width: 100%;
         z-index: 1000;
-        font-size: 12px;
+		border-top: 1px solid #CCCCCC;
     }
     
     .closeButton {
@@ -157,20 +160,6 @@ function wpcbs2m_show_cookiebar_container() {
         display: inline-block;
         box-sizing: border-box;
         padding: 0;
-        height: 40px;
-        font-size: 14px;
-        font-weight: 600;
-        white-space: normal;
-        text-align: center;
-        text-decoration: none;
-        line-height: normal;
-        text-transform: uppercase;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        border-radius: 5px;
-        -moz-background-clip: padding;
-        -webkit-background-clip: padding-box;
-        background-clip: padding-box;
         color: #cccccc;
         border: none;
         background-color: white;
@@ -178,6 +167,14 @@ function wpcbs2m_show_cookiebar_container() {
         right: 5px;
         top: 5px;
         width: 40px;
+		background: transparent;
+		text-align: center;
+    }
+
+    .closeButton svg {
+        width: 14px;
+		background: transparent;
+		text-align: center;
     }
 
     .cookieButton {
@@ -188,6 +185,7 @@ function wpcbs2m_show_cookiebar_container() {
         height: 40px;
         font-size: 14px;
         font-weight: 600;
+		margin-top: 10px;
         white-space: normal;
         text-align: center;
         text-decoration: none;
@@ -206,6 +204,7 @@ function wpcbs2m_show_cookiebar_container() {
     }
 	@media screen and (max-width: 768px) {
 		.cookieButton {
+			margin-top: 0px;
 			height: auto;
 			padding: 4px;
 		}
@@ -217,15 +216,15 @@ function wpcbs2m_show_cookiebar_container() {
         background-color: #fff;
     }
 
-.desktopText {
-    float: left;
-     padding-right: 30px;
-    width: 80%;
-}
+    .desktopText {
+        float: left;
+        padding-right: 30px;
+        width: 80%;
+    }
 
-.mobileText {
-    margin-bottom: 15px;
-}
+    .mobileText {
+        margin-bottom: 15px;
+    }
 
       @media screen and (min-width: 769px) {
           .show-mobile {
