@@ -18,6 +18,7 @@ Just upload and activate.
 NONE
 
 == Changelog ==
+1.1.2 - Style update
 1.1.1 - Add SVG close button
 1.0.9 - Add close button and float cookie bar
 1.0.7 - Javascript fixes

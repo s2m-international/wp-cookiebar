@@ -200,6 +200,7 @@ function wpcbs2m_show_cookiebar_container() {
     .buttonContainer {
         width: 150px;
     }
+
     .cookieButton {
         cursor: pointer;
         display: inline-block;
@@ -224,6 +225,7 @@ function wpcbs2m_show_cookiebar_container() {
         background-color: #95c11e;
         width: 150px;
     }
+    
 	@media screen and (max-width: 768px) {
 		.cookieButton {
 			margin-top: 0px;
